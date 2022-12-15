@@ -10,11 +10,17 @@
 </template>
 
 <script>
-import iframeToggle from "./IframeToggle/index"
+import iframeToggle from "./IframeToggle/index";
+import watermark from "watermark-dom";
 
 export default {
   name: 'AppMain',
   components: { iframeToggle },
+  mounted() {
+    // 加载水印
+    const username = this.$store.state.user.name;
+    watermark.load({ watermark_txt: username + "水印" });
+  },
   computed: {
     cachedViews() {
       return this.$store.state.tagsView.cachedViews
