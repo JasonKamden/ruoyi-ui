@@ -40,5 +40,21 @@ module.exports = {
    * The default is only used in the production env
    * If you want to also use it in dev, you can pass ['production', 'development']
    */
-  errorLog: 'production'
+  errorLog: 'production',
+
+  /**
+   * 开启cas
+   */
+  casEnable: true,
+
+  /**
+   * 单点登录url
+   */
+  casloginUrl: 'http://localhost:8888/cas/login?service=http://localhost:8080',
+
+  /**
+   * 单点登出url
+   */
+  caslogoutUrl: 'http://localhost:8888/cas/logout?service=http://localhost:8080',
+
 }
